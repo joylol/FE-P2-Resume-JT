@@ -165,4 +165,4 @@ var name = $("#name").text();
 $("#main").append(internationalizeButton);
 
 //To display a map:
-$("#mapDiv").append(googleMap);
+$("#map-div").append(googleMap);
