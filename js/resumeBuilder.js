@@ -135,6 +135,20 @@ function displayWork() {
 
 displayWork();
 
+project.display = function() {
+	for(proj in project.projects){
+		$("#projects").append(HTMLprojectStart);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", project.projects[proj].title);
+		var formattedDates = HTMLprojectDates.replace("%data%", project.projects[proj].dates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", project.projects[proj].description);
+		var formattedImage = HTMLprojectImage.replace("%data%", project.projects[proj].images);
+		var formattedProject = formattedTitle + formattedDates + formattedDescription + formattedImage;
+		$(".project-entry:last").append(formattedProject);
+	}
+}
+
+project.display();
+
 function inName(){
 	var intName = window.name;
 	intName = intName.split(" ");
