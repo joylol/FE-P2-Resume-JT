@@ -6,7 +6,7 @@ $ ("#header").append(formattedName);
 $ ("#header").append(formattedRole); 
 
 var bio = {
-	"name": "Joy",
+	"name": "Joy Thomas",
 	"role": "Web Developer",
 	"contact": {
 		"email": "joythomas229@gmail.com",
@@ -15,7 +15,7 @@ var bio = {
 	},
 	"picture_URL": "images/myphoto.jpg",
 	"welcome_message": "My Resume",
-	"skills": ["HTML","CSS", "Javascript", "Bootstrap", "programming", "teaching"]
+	"skills": ["HTML","CSS", "Javascript", "Bootstrap", "Programming", "Teaching"]
 };
 
 var education = {
@@ -72,16 +72,18 @@ var education = {
 var work = {
 	"jobs": [
 	{
-		"employer": "Arlington ISD",
-		"title": "Biomedical Science Teacher",
-		"years": "2012 - 2015",
-		"description": "Taught Biology, Pre-Ap Biology, Principles of Biomedical Science, and Anatomy & Physiology"
+		"employer": "Arlington ISD - Lamar High School",
+		"title": "Science Teacher",
+		"location": "Arlington, TX",
+		"dates": "2012 - 2015",
+		"description": "Teach Biology, Pre-Ap Biology, Principles of Biomedical Science, and Anatomy & Physiology, provide structured, engaging, and safe learning environments for all students, and improve the learning outcomes of students by at least 20%."
 	},
 	{
-		"employer": "UT Southwestern",
-		"title": "Research Technician",
-		"years": "2011",
-		"description": "Cultured bacteria, extracted protein, and ran various lab protocols such as PCR, gel electrophoresis, and Western blot"
+		"employer": "UT Southwestern Medical Center",
+		"title": "Research Technician II",
+		"location": "Dallas, TX",
+		"dates": "2010 - 2011",
+		"description": "Culture bacteria, extract protein, and run various lab protocols such as PCR, gel electrophoresis, and Western blot."
 	}]
 };
 
@@ -101,4 +103,49 @@ var project = {
 
 	}]
 };
+
+if(bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkills);
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkills);
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkills);
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
+	$("#skills").append(formattedSkills);
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[4]);
+	$("#skills").append(formattedSkills);
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[5]);
+	$("#skills").append(formattedSkills);
+}
+
+function displayWork() {
+	for(job in work.jobs){
+		$("#workExperience").append(HTMLworkStart);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		var formattedJob = formattedEmployer + formattedTitle + formattedLocation + formattedDates + formattedDescription;
+		$(".work-entry:last").append(formattedJob);
+	}
+}
+
+displayWork();
+
+function inName(){
+	var intName = window.name;
+	intName = intName.split(" ");
+	console.log(intName);
+	intName[1] = intName[1].toUpperCase();
+	intName[0] = intName[0].slice(0,1).toUpperCase() + intName[0].slice(1).toLowerCase();
+	return intName[0] + " " + intName[1];
+
+}
+
+var name = $("#name").text();
+
+$("#main").append(internationalizeButton);
 
