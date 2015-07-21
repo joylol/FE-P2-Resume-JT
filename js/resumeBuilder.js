@@ -8,7 +8,8 @@ $ ("#header").append(formattedRole);
 var bio = {
 	"name": "Joy Thomas",
 	"role": "Web Developer",
-	"contact": {
+	"contacts": {
+		"location": "Carrollton, TX",
 		"email": "joythomas229@gmail.com",
 		"phone": "817-677-8380",
 		"github_username": "joylol"
@@ -22,7 +23,7 @@ var education = {
 	"schools": [
 	{
 		"name": "UTA",
-		"city": "Arlington",
+		"location": "Arlington, TX",
 		"degree": "Bachelor of Science in Biology",
 		"majors": ["Biology"],
 		"years": "1999-2003",
@@ -30,7 +31,7 @@ var education = {
 	},
 	{
 		"name": "UNT",
-		"city": "Denton",
+		"location": "Denton, TX",
 		"degree": "Masters of Science in Library Science",
 		"majors": ["Library Science"],
 		"years": "2009-2011",
@@ -163,3 +164,5 @@ var name = $("#name").text();
 
 $("#main").append(internationalizeButton);
 
+//To display a map:
+$("#mapDiv").append(googleMap);
