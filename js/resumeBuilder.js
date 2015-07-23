@@ -1,13 +1,7 @@
 
-/*var formattedName = HTMLheaderName.replace("%data%", "Joy Thomas");
-var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
-
-$ ("#header").append(formattedName);
-$ ("#header").append(formattedRole); */
-
 var bio = {
 	"name": "Joy Thomas",
-	"role": "Web Developer",
+	"role": "Front End Web Developer",
 	"contacts": {
 		"mobile": "(469) 616-3569",
 		"email": "joythomas@outlook.com",
@@ -18,7 +12,7 @@ var bio = {
 	"welcomeMessage": "My Resume",
 	"skills": ["HTML","CSS", "Javascript", "Bootstrap", "Programming", "Teaching"],
 	"bioPic": "images/myphoto.jpg",
-	display: function() {
+	"display": function() {
 		var formattedName = HTMLheaderName.replace("%data%", this.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", this.role);
 		$("#header").prepend(formattedName + formattedRole); 
@@ -48,53 +42,78 @@ var bio = {
 
 var education = {
 	"schools": [
-	{
-		"name": "UTA",
-		"location": "Arlington, TX",
-		"degree": "Bachelor of Science in Biology",
-		"majors": ["Biology"],
-		"dates": 2003,
-		"url": "https://www.unt.edu/"
-	},
-	{
-		"name": "UNT",
-		"location": "Denton, TX",
-		"degree": "Masters of Science in Library Science",
-		"majors": ["Library Science"],
-		"years": 2011,
-		"url": "www.uta.edu/"
-	}],
-	"onlineCourse": [
-	{
-		"title": "Intro to HTML and CSS",
-		"school": "Udacity",
-		"dates": "June 24, 2015 - June 30, 2015",
-		"url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
-	},
-	{
-		"title": "Responsive Web Design Fundamentals",
-		"school": "Udacity",
-		"dates": "July 1, 2015 - July 6, 2015",
-		"url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
-	},
-	{
-		"title": "Git and GitHub",
-		"school": "Udacity",
-		"dates": "July 6, 2015 - July 9, 2015",
-		"url": "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
-	},
-	{
-		"title": "Responsive Images",
-		"school": "Udacity",
-		"dates": "July 10, 2015 - July 14, 2015",
-		"url": "https://www.udacity.com/course/responsive-images--ud882"
-	},
-	{
-		"title": "Javascript Basics",
-		"school": "Udacity",
-		"dates": "July 17 - ",
-		"url": "https://www.udacity.com/course/javascript-basics--ud804"
-	}]
+		{
+			"name": "University of Texas at Arlington",
+			"location": "Arlington, TX",
+			"degree": "Bachelor of Science in Biology",
+			"majors": ["Biology"],
+			"dates": 2003,
+			"url": "https://www.uta.edu/"
+		},
+		{
+			"name": "University of North Texas",
+			"location": "Denton, TX",
+			"degree": "Masters of Science in Library Science",
+			"majors": ["Library Science"],
+			"dates": 2011,
+			"url": "https://www.unt.edu/"
+		}
+	],
+	"onlineCourses": [
+		{
+			"title": "Intro to HTML and CSS",
+			"school": "Udacity",
+			"date": 2015,
+			"url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
+		},
+		{
+			"title": "Responsive Web Design Fundamentals",
+			"school": "Udacity",
+			"date": 2015,
+			"url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+		},
+		{
+			"title": "Git and GitHub",
+			"school": "Udacity",
+			"date": 2015,
+			"url": "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
+		},
+		{
+			"title": "Responsive Images",
+			"school": "Udacity",
+			"date": 2015,
+			"url": "https://www.udacity.com/course/responsive-images--ud882"
+		},
+		{
+			"title": "Javascript Basics",
+			"school": "Udacity",
+			"date": 2015,
+			"url": "https://www.udacity.com/course/javascript-basics--ud804"
+		}
+	],
+	"display" : function(){
+		for(school in education.schools) {
+			$("#education").append(HTMLschoolStart);
+			var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+			formattedName = formattedName.replace("#", education.schools[school].url);
+			var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+			var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+			var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+			var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+			$(".education-entry:last").append(formattedName + formattedDegree + formattedLocation + formattedDates + formattedMajors);
+		}
+
+		$(".education-entry:last").append(HTMLonlineClasses);
+		for(course in education.onlineCourses) {
+			var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+			formattedTitle = formattedTitle.replace("#", education.onlineCourses[course].url);
+			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+			var formattedDate = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
+			var formattedURL = HTMLonlineURL.replace("#", education.onlineCourses[course].url);
+			formattedURL = formattedURL.replace("%data%", "Link to course")
+			$(".education-entry:last").append(formattedTitle + formattedSchool + formattedDate + formattedURL);
+		}
+	}
 };
 
 var work = {
@@ -112,7 +131,19 @@ var work = {
 		"location": "Dallas, TX",
 		"dates": "2010 - 2011",
 		"description": "Culture bacteria, extract protein, and run various lab protocols such as PCR, gel electrophoresis, and Western blot."
-	}]
+	}],
+	"display": function() {
+		for(job in work.jobs){
+			$("#workExperience").append(HTMLworkStart);
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+			var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+			var formattedJob = formattedEmployer + formattedTitle + formattedLocation + formattedDates + formattedDescription;
+			$(".work-entry:last").append(formattedJob);
+		}
+	}
 };
 
 var project = {
@@ -120,7 +151,7 @@ var project = {
 	{
 		"title": "P0: About Me Page",
 		"dates": "July 8, 2015",
-		"description": "My first Udacity Front End Nanodegree project. Using a template, HTML, and CSS, I personalized a webpage to be about me.",
+		"description": "My first Udacity Front End Nanodegree project. Using a template, HTML, and CSS, I personalized a webpage.",
 		"images": []
 	},
 	{
@@ -130,7 +161,7 @@ var project = {
 		"images": []
 
 	}],
-	display: function() {
+	"display": function() {
 		for(proj in project.projects){
 			$("#projects").append(HTMLprojectStart);
 			var formattedTitle = HTMLprojectTitle.replace("%data%", project.projects[proj].title);
@@ -157,8 +188,12 @@ function displayWork() {
 }
 
 displayWork();
+
 bio.display();
+
 project.display();
+
+education.display();
 
 function inName(){
 	var intName = window.name;
