@@ -11,7 +11,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .clear-fix {
@@ -34,7 +34,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #8c9db1;
   line-height: 29px;
   padding: 10px;
 }
@@ -79,6 +79,11 @@ h5 {
 
 }
 
+#navigation {
+  background: #cfb05e;
+  font-size: 1.2em;
+}
+
 p {
   font-size: 14px;
   color: #333;
@@ -86,12 +91,19 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #464f74;
   text-decoration: none;
   margin-top: 10px;
   display: block;
 }
 
+.onlineLink {
+  margin: 0;
+}
+
+#roleHeader {
+  color: #8c9db1;
+}
 .welcome-message {
   font-style: italic;
   font-size: 18px;
@@ -105,11 +117,11 @@ a {
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #cfb05e;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #cfb05e;
 }
 
 .white-text {
@@ -127,9 +139,9 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
+
 #header {
-  background-color: #484848;
+  background-color: #464f74;
 }
 
 .flex-box {
@@ -158,6 +170,7 @@ ul {
 
 img {
   padding: 10px;
+  max-width: 100%;
 }
 
 span {

@@ -152,13 +152,13 @@ var project = {
 		"title": "P0: About Me Page",
 		"dates": "July 8, 2015",
 		"description": "My first Udacity Front End Nanodegree project. Using a template, HTML, and CSS, I personalized a webpage.",
-		"images": []
+		"images": "images/P0ScreenShot.png"
 	},
 	{
 		"title": "P1: Porfolio",
 		"dates": "July 8, 2015 - July 17, 2015",
 		"description": "Using what I learned from the Udacity courses, HTML and CSS, Responsive Web Design Fundamentals, and Responsive Images, I created a portfolio page that is responsive and personalized.",
-		"images": []
+		"images": "images/P1ScreenShot.png"
 
 	}],
 	"display": function() {
@@ -196,7 +196,7 @@ project.display();
 education.display();
 
 function inName(){
-	var intName = window.name;
+	var intName = bio.name;
 	intName = intName.split(" ");
 	console.log(intName);
 	intName[1] = intName[1].toUpperCase();
@@ -205,7 +205,7 @@ function inName(){
 
 }
 
-var name = $("#name").text();
+
 
 $("#main").append(internationalizeButton);
 
