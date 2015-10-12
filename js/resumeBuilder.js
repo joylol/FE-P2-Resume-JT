@@ -152,13 +152,13 @@ var project = {
 		"title": "P0: About Me Page",
 		"dates": "July 8, 2015",
 		"description": "My first Udacity Front End Nanodegree project. Using a template, HTML, and CSS, I personalized a webpage.",
-		"images": "images/P0ScreenShot.png"
+		"images": "images/P0ScreenShot.PNG"
 	},
 	{
 		"title": "P1: Porfolio",
 		"dates": "July 8, 2015 - July 17, 2015",
 		"description": "Using what I learned from the Udacity courses, HTML and CSS, Responsive Web Design Fundamentals, and Responsive Images, I created a portfolio page that is responsive and personalized.",
-		"images": "images/P1ScreenShot.png"
+		"images": "images/P1ScreenShot.PNG"
 
 	}],
 	"display": function() {
